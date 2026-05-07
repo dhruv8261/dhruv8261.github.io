@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhruv Patel — Cybersecurity Engineer</title>
+  <meta name="description" content="Dhruv Patel — Cybersecurity Engineer specializing in penetration testing, threat intelligence, and cloud security." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <div class="logo">// <span>0x</span>DHRUV.SEC</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="pages/skills.html">Skills</a>
+      <a href="pages/projects.html">Projects</a>
+      <a href="pages/tools.html">Tools</a>
+      <a href="pages/calculator.html">Calculator</a>
+      <a href="pages/contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <canvas id="three-canvas"></canvas>
+    <div class="hero-text">
+      <div class="hero-tag">&gt; CYBERSECURITY_ENGINEER.EXE</div>
+      <div class="hero-name">Dhruv<br>Patel</div>
+      <div class="hero-title">Penetration Tester &amp; Security Architect</div>
+      <div class="hero-desc">Securing digital assets through offensive security research, cloud hardening, and zero-trust architecture design.</div>
+      <div class="hero-btns">
+        <a href="pages/projects.html" class="btn-primary">View Projects</a>
+        <a href="pages/skills.html" class="btn-ghost">Skill Matrix</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num cyan">7+</div><div class="stat-label">Years Exp</div></div>
+    <div class="stat"><div class="stat-num green">40+</div><div class="stat-label">CVEs Found</div></div>
+    <div class="stat"><div class="stat-num amber">CISSP</div><div class="stat-label">Certified</div></div>
+    <div class="stat"><div class="stat-num red">CEH</div><div class="stat-label">Certified</div></div>
+    <div class="stat"><div class="stat-num cyan">OSCP</div><div class="stat-label">Certified</div></div>
+  </div>
+
+  <div class="scan-line"></div>
+
+  <!-- TERMINAL STATUS -->
+  <div class="terminal-bar">
+    <span class="terminal-line">&gt; SYSTEM STATUS: ALL SECURE &nbsp;|&nbsp; LAST PENTEST: 2 DAYS AGO &nbsp;|&nbsp; THREATS NEUTRALIZED: 247 &nbsp;|&nbsp; UPTIME: 99.97% _</span>
+  </div>
+
+  <!-- ABOUT TEASER -->
+  <section class="section" style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
+    <div>
+      <div class="section-label">&gt; WHOAMI</div>
+      <div class="section-title">About Dhruv</div>
+      <p class="body-text">I'm a cybersecurity engineer based in Brampton, Ontario with 7+ years of experience breaking into systems — legally. I specialize in red team operations, cloud security architecture, and building defensive tooling that actually works.</p>
+      <p class="body-text" style="margin-top:12px;">Currently open to senior pentesting roles and security consulting engagements.</p>
+      <a href="pages/contact.html" class="btn-primary" style="margin-top:24px; display:inline-block;">Get In Touch</a>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-badge"><div class="cert-icon">🛡️</div><div class="cert-name">CISSP</div><div class="cert-sub">ISC²</div></div>
+      <div class="cert-badge"><div class="cert-icon">⚔️</div><div class="cert-name">CEH</div><div class="cert-sub">EC-Council</div></div>
+      <div class="cert-badge"><div class="cert-icon">🔓</div><div class="cert-name">OSCP</div><div class="cert-sub">Offensive Security</div></div>
+      <div class="cert-badge"><div class="cert-icon">☁️</div><div class="cert-name">AWS-SAA</div><div class="cert-sub">Amazon</div></div>
+    </div>
+  </section>
+
+  <!-- FEATURED SKILLS TEASER -->
+  <section class="section" style="background:#06101a; margin:0; padding:40px 32px;">
+    <div class="section-label">&gt; TOP_SKILLS.JSON</div>
+    <div class="section-title">Core Competencies</div>
+    <div class="mini-skills">
+      <div class="mini-skill"><span class="ms-icon">🗡️</span> Penetration Testing</div>
+      <div class="mini-skill"><span class="ms-icon">☁️</span> Cloud Security</div>
+      <div class="mini-skill"><span class="ms-icon">🦠</span> Malware Analysis</div>
+      <div class="mini-skill"><span class="ms-icon">🔍</span> Threat Intelligence</div>
+      <div class="mini-skill"><span class="ms-icon">🌐</span> Network Security</div>
+      <div class="mini-skill"><span class="ms-icon">🐍</span> Python / Scripting</div>
+    </div>
+    <div style="margin-top:24px;"><a href="pages/skills.html" class="btn-ghost">View Full Skill Matrix →</a></div>
+  </section>
+
+  <footer class="footer">
+    <div class="logo" style="margin-bottom:8px;">// <span>0x</span>DHRUV.SEC</div>
+    <p style="color:#546e7a; font-size:12px; letter-spacing:1px;">© 2025 Dhruv Patel · All rights reserved · Brampton, Ontario</p>
+    <p style="color:#37474f; font-size:11px; margin-top:6px; font-family:'Share Tech Mono',monospace;">Built with Three.js · Hosted on GitHub Pages</p>
+  </footer>
+
+  <script src="assets/globe.js"></script>
+  <script src="assets/nav.js"></script>
+</body>
+</html>
