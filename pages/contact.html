@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Dhruv Patel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="../index.html" class="logo">// <span>0x</span>DHRUV.SEC</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="tools.html">Tools</a>
+      <a href="calculator.html">Calculator</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="section-label">&gt; CONTACT.SH</div>
+    <h1>Get In Touch</h1>
+    <p>Available for senior pentesting roles, security consulting, and speaking engagements.</p>
+  </div>
+
+  <div class="contact-layout">
+    <div class="contact-info">
+      <h2>Let's Connect</h2>
+      <p class="body-text" style="margin-bottom:24px;">Whether you need a penetration test, security architecture review, or just want to talk shop — reach out.</p>
+
+      <div class="contact-item">
+        <div class="contact-item-icon">📧</div>
+        <div>
+          <div class="contact-item-label">Email</div>
+          <a href="mailto:dhruv@yourdomain.com" class="contact-item-value">dhruv@yourdomain.com</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon">💼</div>
+        <div>
+          <div class="contact-item-label">LinkedIn</div>
+          <a href="https://linkedin.com/in/dhruvpatel" target="_blank" rel="noopener" class="contact-item-value">linkedin.com/in/dhruvpatel</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon">🐙</div>
+        <div>
+          <div class="contact-item-label">GitHub</div>
+          <a href="https://github.com/dhruvpatel" target="_blank" rel="noopener" class="contact-item-value">github.com/dhruvpatel</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon">📍</div>
+        <div>
+          <div class="contact-item-label">Location</div>
+          <span class="contact-item-value">Brampton, Ontario, Canada</span>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon">🔑</div>
+        <div>
+          <div class="contact-item-label">PGP Key</div>
+          <a href="#" class="contact-item-value">Download Public Key</a>
+        </div>
+      </div>
+
+      <div style="margin-top:32px; padding:20px; background:rgba(105,240,174,0.05); border:1px solid rgba(105,240,174,0.2);">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#69f0ae; letter-spacing:2px; margin-bottom:8px;">// AVAILABILITY</div>
+        <p style="font-size:14px; color:#b0bec5;">Currently open to: <span style="color:#69f0ae;">Senior Pentesting Roles · Security Consulting · CTF Mentoring</span></p>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h2>Send a Message</h2>
+      <p style="font-size:13px; color:#546e7a; margin-bottom:24px; font-family:'Share Tech Mono',monospace;">// For sensitive disclosures, please use PGP encryption</p>
+
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="Jane Smith" />
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="jane@company.com" />
+      </div>
+      <div class="form-group">
+        <label>Subject</label>
+        <input type="text" placeholder="Penetration Test Inquiry" />
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea rows="5" placeholder="Tell me about your project or security needs..."></textarea>
+      </div>
+
+      <button class="btn-primary" onclick="handleSubmit(this)" style="width:100%; text-align:center; font-size:14px;">
+        Send Message
+      </button>
+      <p class="form-note" style="margin-top:14px;">
+        // To use this form with a real backend, connect it to <a href="https://formspree.io" target="_blank" rel="noopener" style="color:#00e5ff;">Formspree</a> or <a href="https://netlify.com/products/forms" target="_blank" rel="noopener" style="color:#00e5ff;">Netlify Forms</a> (both free tiers available).
+      </p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="logo" style="margin-bottom:8px;"><a href="../index.html" style="color:inherit;text-decoration:none;">// <span>0x</span>DHRUV.SEC</a></div>
+    <p style="color:#546e7a; font-size:12px; letter-spacing:1px;">© 2025 Dhruv Patel · Brampton, Ontario</p>
+  </footer>
+
+  <script src="../assets/nav.js"></script>
+  <script>
+    function handleSubmit(btn) {
+      btn.textContent = '✓ MESSAGE SENT';
+      btn.style.background = '#69f0ae';
+      btn.disabled = true;
+      /* Replace with Formspree fetch() call when you have an endpoint */
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills — Dhruv Patel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="../index.html" class="logo">// <span>0x</span>DHRUV.SEC</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html">Home</a>
+      <a href="skills.html" class="active">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="tools.html">Tools</a>
+      <a href="calculator.html">Calculator</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="section-label">&gt; SKILL_MATRIX.JSON</div>
+    <h1>Technical Arsenal</h1>
+    <p>7+ years of hands-on expertise across offensive security, cloud hardening, and threat intelligence.</p>
+  </div>
+
+  <section class="section">
+    <div class="category-title" style="margin-top:0">// OFFENSIVE SECURITY</div>
+    <div class="skills-grid" id="offensive"></div>
+
+    <div class="category-title">// CLOUD &amp; INFRASTRUCTURE</div>
+    <div class="skills-grid" id="cloud"></div>
+
+    <div class="category-title">// BLUE TEAM &amp; DFIR</div>
+    <div class="skills-grid" id="blue"></div>
+
+    <div class="category-title">// PROGRAMMING &amp; TOOLING</div>
+    <div class="skills-grid" id="dev"></div>
+  </section>
+
+  <footer class="footer">
+    <div class="logo" style="margin-bottom:8px;"><a href="../index.html" style="color:inherit;text-decoration:none;">// <span>0x</span>DHRUV.SEC</a></div>
+    <p style="color:#546e7a; font-size:12px; letter-spacing:1px;">© 2025 Dhruv Patel · Brampton, Ontario</p>
+  </footer>
+
+  <script src="../assets/nav.js"></script>
+  <script>
+    const data = {
+      offensive: [
+        { name:'Penetration Testing', pct:95, icon:'🗡️' },
+        { name:'Web App Security', pct:92, icon:'🌐' },
+        { name:'Network Exploitation', pct:88, icon:'📡' },
+        { name:'Active Directory Attacks', pct:85, icon:'🏰' },
+        { name:'Social Engineering', pct:80, icon:'🎭' },
+        { name:'Wireless Security', pct:76, icon:'📶' },
+      ],
+      cloud: [
+        { name:'AWS Security', pct:88, icon:'☁️' },
+        { name:'Azure Security', pct:82, icon:'🔵' },
+        { name:'GCP Security', pct:75, icon:'🟡' },
+        { name:'Kubernetes Hardening', pct:78, icon:'⚙️' },
+        { name:'Terraform / IaC', pct:72, icon:'🏗️' },
+        { name:'Zero Trust Architecture', pct:80, icon:'🔐' },
+      ],
+      blue: [
+        { name:'SIEM / Splunk', pct:87, icon:'📊' },
+        { name:'Threat Intelligence', pct:85, icon:'🔍' },
+        { name:'Malware Analysis', pct:82, icon:'🦠' },
+        { name:'Incident Response', pct:88, icon:'🚨' },
+        { name:'Digital Forensics', pct:78, icon:'🔬' },
+        { name:'Vulnerability Management', pct:90, icon:'🛡️' },
+      ],
+      dev: [
+        { name:'Python', pct:90, icon:'🐍' },
+        { name:'Bash / PowerShell', pct:88, icon:'💻' },
+        { name:'Go', pct:72, icon:'🐹' },
+        { name:'JavaScript', pct:70, icon:'📜' },
+        { name:'Docker', pct:80, icon:'🐳' },
+        { name:'Git / CI/CD', pct:82, icon:'🔀' },
+      ]
+    };
+
+    Object.entries(data).forEach(([key, skills]) => {
+      const el = document.getElementById(key);
+      skills.forEach(s => {
+        el.innerHTML += `
+          <div class="skill-card">
+            <div class="skill-icon">${s.icon}</div>
+            <div class="skill-name">${s.name}</div>
+            <div class="skill-bar-bg"><div class="skill-bar" style="width:0" data-pct="${s.pct}"></div></div>
+            <div class="skill-pct">${s.pct}%</div>
+          </div>`;
+      });
+    });
+
+    /* Animate bars on load */
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.skill-bar').forEach(bar => {
+        bar.style.width = bar.dataset.pct + '%';
+      });
+    });
+  </script>
+</body>
+</html>

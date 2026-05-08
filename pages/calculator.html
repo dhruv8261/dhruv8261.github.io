@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buy vs Rent Calculator — Dhruv Patel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="../index.html" class="logo">// <span>0x</span>DHRUV.SEC</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="tools.html">Tools</a>
+      <a href="calculator.html" class="active">Calculator</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="calc-hero">
+    <div class="section-label">&gt; TOOL: BUY_VS_RENT.PY</div>
+    <h1>Buy vs Rent Calculator</h1>
+    <p>Model the true long-term financial impact of buying vs renting — including equity, investment returns, and break-even point.</p>
+  </div>
+
+  <div class="calc-layout">
+    <div class="calc-panel">
+      <h3>🏠 Buying Costs</h3>
+      <div class="field"><label>Home Price ($)</label><input type="number" id="homePrice" value="650000" oninput="calc()" /></div>
+      <div class="field"><label>Down Payment (%)</label><input type="number" id="downPct" value="20" oninput="calc()" /></div>
+      <div class="field"><label>Mortgage Rate (% / year)</label><input type="number" id="rate" value="6.5" step="0.1" oninput="calc()" /></div>
+      <div class="field"><label>Amortization Period (years)</label><input type="number" id="term" value="25" oninput="calc()" /></div>
+      <div class="field"><label>Property Tax / Year ($)</label><input type="number" id="propTax" value="5200" oninput="calc()" /></div>
+      <div class="field"><label>Maintenance / Year ($)</label><input type="number" id="maint" value="4000" oninput="calc()" /></div>
+      <div class="field"><label>Annual Home Appreciation (%)</label><input type="number" id="appreciation" value="3" step="0.1" oninput="calc()" /></div>
+    </div>
+
+    <div class="calc-panel">
+      <h3>🏢 Renting Costs</h3>
+      <div class="field"><label>Monthly Rent ($)</label><input type="number" id="rent" value="2800" oninput="calc()" /></div>
+      <div class="field"><label>Annual Rent Increase (%)</label><input type="number" id="rentIncrease" value="3" step="0.1" oninput="calc()" /></div>
+      <div class="field"><label>Renter's Insurance / Month ($)</label><input type="number" id="rentersIns" value="30" oninput="calc()" /></div>
+      <div class="field"><label>Investment Return on Saved Cash (%)</label><input type="number" id="investReturn" value="7" step="0.1" oninput="calc()" /></div>
+      <div class="field"><label>Time Horizon (years)</label><input type="number" id="horizon" value="10" oninput="calc()" /></div>
+
+      <div style="margin-top:24px; padding:16px; background:rgba(0,229,255,0.04); border:1px solid rgba(0,229,255,0.15);">
+        <div style="font-family:'Share Tech Mono',monospace; font-size:10px; color:#69f0ae; letter-spacing:2px; margin-bottom:8px;">// TIP</div>
+        <p style="font-size:13px; color:#78909c; line-height:1.6;">When renting, the difference between your rent and what you'd spend on a mortgage can be invested. This calculator accounts for that opportunity cost.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="result-panel">
+    <div style="font-family:'Share Tech Mono',monospace; font-size:11px; color:#69f0ae; letter-spacing:2px; margin-bottom:18px;">// ANALYSIS OUTPUT</div>
+    <div class="result-grid">
+      <div class="result-metric">
+        <div class="result-label">Net Buy Cost</div>
+        <div class="result-value cyan" id="buyCost">—</div>
+        <div style="font-size:11px;color:#546e7a;margin-top:6px;">After equity</div>
+      </div>
+      <div class="result-metric">
+        <div class="result-label">Net Rent Cost</div>
+        <div class="result-value amber" id="rentCost">—</div>
+        <div style="font-size:11px;color:#546e7a;margin-top:6px;">After investments</div>
+      </div>
+      <div class="result-metric">
+        <div class="result-label">Equity Built</div>
+        <div class="result-value green" id="equity">—</div>
+        <div style="font-size:11px;color:#546e7a;margin-top:6px;">Home value – remaining loan</div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:16px 0;">
+      <div class="result-metric">
+        <div class="result-label">Monthly Mortgage</div>
+        <div class="result-value" style="color:#e0f7fa; font-size:17px;" id="mortgage">—</div>
+      </div>
+      <div class="result-metric">
+        <div class="result-label">Break-even Year</div>
+        <div class="result-value" style="color:#e0f7fa; font-size:17px;" id="breakeven">—</div>
+      </div>
+    </div>
+
+    <div class="verdict neutral" id="verdict">Enter your values above to generate analysis.</div>
+  </div>
+
+  <div style="padding:0 32px 48px;">
+    <p style="font-size:12px; color:#37474f; font-family:'Share Tech Mono',monospace;">* This calculator is for educational purposes only. Consult a financial advisor before making real estate decisions. Calculations do not include CMHC insurance, land transfer tax, or closing costs.</p>
+  </div>
+
+  <footer class="footer">
+    <div class="logo" style="margin-bottom:8px;"><a href="../index.html" style="color:inherit;text-decoration:none;">// <span>0x</span>DHRUV.SEC</a></div>
+    <p style="color:#546e7a; font-size:12px; letter-spacing:1px;">© 2025 Dhruv Patel · Brampton, Ontario</p>
+  </footer>
+
+  <script src="../assets/nav.js"></script>
+  <script>
+    function fmt(n) { return '$' + Math.round(n).toLocaleString('en-CA'); }
+
+    function calc() {
+      const P     = parseFloat(document.getElementById('homePrice').value)    || 0;
+      const dp    = (parseFloat(document.getElementById('downPct').value)      || 20) / 100;
+      const r     = (parseFloat(document.getElementById('rate').value)         || 6.5) / 100 / 12;
+      const n     = (parseFloat(document.getElementById('term').value)         || 25) * 12;
+      const tax   = parseFloat(document.getElementById('propTax').value)       || 0;
+      const maint = parseFloat(document.getElementById('maint').value)         || 0;
+      const appr  = (parseFloat(document.getElementById('appreciation').value) || 3) / 100;
+
+      const rent0      = parseFloat(document.getElementById('rent').value)        || 0;
+      const rentInc    = (parseFloat(document.getElementById('rentIncrease').value)|| 3) / 100;
+      const rentersIns = parseFloat(document.getElementById('rentersIns').value)  || 0;
+      const inv        = (parseFloat(document.getElementById('investReturn').value)|| 7) / 100;
+      const yrs        = parseFloat(document.getElementById('horizon').value)      || 10;
+
+      const loan        = P * (1 - dp);
+      const downPayment = P * dp;
+      const monthly     = r > 0 ? loan * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1) : loan/n;
+
+      document.getElementById('mortgage').textContent = fmt(monthly) + '/mo';
+
+      let remaining = loan;
+      let totalMortgage = 0, totalTax = 0, totalMaint = 0, totalRent = 0, totalRentersIns = 0;
+      let breakEvenYear = null;
+
+      for (let y = 1; y <= Math.max(yrs, 30); y++) {
+        for (let m = 0; m < 12; m++) {
+          const interest = remaining * r;
+          remaining = Math.max(0, remaining - (monthly - interest));
+        }
+        totalMortgage  += monthly * 12;
+        totalTax       += tax;
+        totalMaint     += maint;
+        totalRent      += rent0 * Math.pow(1 + rentInc, y - 1) * 12;
+        totalRentersIns+= rentersIns * 12;
+
+        if (y <= yrs) {
+          const hv = P * Math.pow(1 + appr, y);
+          const eq = hv - remaining;
+          const buyNet  = downPayment + totalMortgage + totalTax + totalMaint - eq;
+          const rentNet = totalRent + totalRentersIns;
+          if (breakEvenYear === null && buyNet < rentNet) breakEvenYear = y;
+        }
+      }
+
+      const homeValue = P * Math.pow(1 + appr, yrs);
+      const equity    = homeValue - remaining;
+
+      let totalMortgageAtHorizon = 0, totalTaxH = 0, totalMaintH = 0, totalRentH = 0, totalRIH = 0;
+      let rem2 = loan;
+      for (let y = 1; y <= yrs; y++) {
+        for (let m = 0; m < 12; m++) {
+          const interest = rem2 * r;
+          rem2 = Math.max(0, rem2 - (monthly - interest));
+        }
+        totalMortgageAtHorizon += monthly * 12;
+        totalTaxH  += tax;
+        totalMaintH+= maint;
+        totalRentH += rent0 * Math.pow(1 + rentInc, y - 1) * 12;
+        totalRIH   += rentersIns * 12;
+      }
+
+      const buyCostNet  = downPayment + totalMortgageAtHorizon + totalTaxH + totalMaintH - equity;
+      const rentCostNet = totalRentH + totalRIH;
+
+      document.getElementById('buyCost').textContent  = fmt(buyCostNet);
+      document.getElementById('rentCost').textContent = fmt(rentCostNet);
+      document.getElementById('equity').textContent   = fmt(equity);
+      document.getElementById('breakeven').textContent = breakEvenYear ? 'Year ' + breakEvenYear : 'After 30y';
+
+      const v = document.getElementById('verdict');
+      const diff = Math.abs(buyCostNet - rentCostNet);
+      if (buyCostNet < rentCostNet) {
+        v.className = 'verdict buy';
+        v.textContent = `✅ Buying saves approximately ${fmt(diff)} over ${yrs} years after accounting for equity built (${fmt(equity)}).`;
+      } else {
+        v.className = 'verdict rent';
+        v.textContent = `📊 Renting + investing the difference appears cheaper by approximately ${fmt(diff)} over ${yrs} years. Review the break-even year before deciding.`;
+      }
+    }
+
+    calc();
+  </script>
+</body>
+</html>
